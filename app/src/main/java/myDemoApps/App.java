@@ -3,6 +3,8 @@
  */
 package myDemoApps;
 import java.util.*;
+import java.util.logging.*;
+
 
 import static spark.Spark.get;
 import static spark.Spark.port;
@@ -30,11 +32,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Logger logger = LogManager.getLogger(App.class);
+        Logger logger = Logger.getLogger(App.class.getName());
 
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
-        logger.error("Current port number:" + port);
+        logger.info("Current port number:" + port);
 
         port(getHerokuAssignedPort());
 
