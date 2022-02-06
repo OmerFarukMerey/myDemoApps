@@ -48,3 +48,7 @@ tasks.named('test') {
 task stage(dependsOn: ['shadowJar'])
 shadowJar.mustRunAfter clean
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '7.3.3'
+}
+
